@@ -12,6 +12,8 @@ const boxesContainer = document.getElementById('boxes');
 
 function createBoxes(amount) {
 
+  const boxesFragment = document.createDocumentFragment();
+
   for (let i = 0; i < amount; i++) {
     const size = 30 + i * 10;
     const box = document.createElement('div');
@@ -20,6 +22,7 @@ function createBoxes(amount) {
     box.style.backgroundColor = getRandomHexColor();
     boxesContainer.appendChild(box);
   }
+   boxesContainer.appendChild(boxesFragment);
 }
 
 createButton.addEventListener('click', () => {
